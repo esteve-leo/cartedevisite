@@ -6,14 +6,18 @@
     font-family: 'MerriweatherSans';
     src: url(font/MerriweatherSans-VariableFont_wght.ttf);
 }
-
-body {
-    height:100%;
-    padding: 0px;
-    margin: 0px;
+@font-face {
+    font-family: "Raleway";
+    src: url(font/Raleway-VariableFont_wght.ttf)
 }
-/*gestion de fenêtres fixe qui s'affiche lorsqu'on les cible,
- et se ferme lorsqu'on cible leur parent, la div avec une id="fermetureXXX*/
+
+
+/*
+##------------SYSTEME DE FENETRES DU MENU MOTIVATION------------##
+
+    gestion de fenêtres fixes qui s'affichent lorsqu'on les cible,
+    et se ferme lorsqu'on cible leur parent, la div avec une id="fermetureXXX
+*/
 .fenetre {
     position: fixed;
     top: 20%;
@@ -24,12 +28,12 @@ body {
     padding-right: 5%;
     padding-left: 5%;
     font-size: 1.5em;
-    background-color: aliceblue;
+    background-color: #e0eefa;
     overflow: hidden;
     overflow-y: scroll;
-    border-radius: 20px;
+    border-radius: 15px;
     border: 1px solid #7f848b;
-    box-shadow: 5px 5px 5px #7f848b;
+    box-shadow: 5px 5px 5px rgba(17, 20, 24, 0.7);
 }
 .fenetre::-webkit-scrollbar{
     display: none;
@@ -39,12 +43,50 @@ body {
     top:10px;
     left:90%;
     padding: 2px;
+    padding-right: 5px;
+    padding-left: 5px;
+    text-decoration: none;
     color: #7499cc;
     background-color: rgba(0,0,0,0);
     border: 1px double #7499cc;
 }
 
-/*definition des caratéristiques des principaux conteneurs flex de la page*/
+/*Gestion des évènements du menu motivations et de ses "fenêtre"*/
+.closeButton:hover{
+    cursor: pointer;
+}
+.closeButton:active{
+    border: 1px dashed #7499cc;
+}
+#fermeturePassion:target .fenetre{
+    display: none;
+}
+#passion:target {
+    display: block;
+}
+#fermetureEquipe:target {
+    display: none;
+}
+#equipe:target {
+    display: block;
+}
+#fermetureApprentissage:target {
+    display: none;
+}    
+#apprentissage:target {
+    display: block;
+}
+#femetureProfessionnel:target {
+    display:none;
+}
+#professionnel:target {
+    display: block;
+}
+
+
+/*
+#-----------DEFINITION DES CARACTERISTIQUES DES CONTENEURS FLEX PRINCIPAUX DE LA PAGE-----------#
+*/
 #main {
     height:100%;
     display: flex;
@@ -63,7 +105,7 @@ body {
     width: 70%;
 }
 #links {
-    height: 40%;
+    height: 100%;
     margin-top: 0px;
 }
 #motivations {
@@ -71,52 +113,23 @@ body {
     margin-top: 2em;
 }
 
-/*Gestion des évènements du menu motivations*/
-#motivations:hover ul{
-    height: 10em;
-}
-#motivations:hover{
-    padding-bottom: 0em;
-}
-.closeButton:hover{
-    cursor: pointer;
-}
-.closeButton:active{
-    border: 1px dashed #7499cc;
-}
-#fermeturePassion:target .fenetre{
-    display:none;
-}
-#passion:target {
-    display: block;
-}
-#fermetureEquipe:target {
-    display:none;
-}
-#equipe:target {
-    display: block;
-}
-#fermetureApprentissage:target {
-    display:none;
-}
-#apprentissage:target {
-    display: block;
-}
-#fermetureProfessionnel:target {
-    display:none;
-}
-#professionnel:target {
-    display: block;
-}
 
 
+body {
+    height:100%;
+    min-height: 100vh;
+    padding: 0px;
+    margin: 0px;
+    font-family: "Raleway";
+    background: linear-gradient(35deg, #009de6, 40%, #f79b13);
+}
 h1 {
     margin-top: 0px;
     text-align: center;
     font-family: "Lobster", sans-serif;
     font-size: 3em;
     font-weight: lighter;
-    background: linear-gradient(#7f848b, 10%, #fbfdff);
+
 }
 h3 {
     width: 99%;
@@ -124,12 +137,12 @@ h3 {
     margin-bottom: 0px;
     padding-top: 0.5em;
     padding-bottom: 0.5em;
-    color: white;
+    color: beige;
     font-size: 3em;
     text-align: center;
-    border: 5px solid #294275 ;
-    border-radius: 60px;
-    background: #7499cc;
+    border: 2px solid #0c1422 ;
+    border-radius: 15px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
 
 ul {
@@ -140,44 +153,69 @@ ul {
     overflow: hidden;
     list-style: inside;
     font-size: 1.5em;
-    transition: height ease 2s;
+    transition: height ease 1s;
 }
 li a{
     text-decoration: none;
-    color:#294275;
-}
-li a:hover{
-    color:white;
-    background-color: #7499cc;
+    color:#0c1422;
 }
 li a:visited{
-    color: #294275;
+    color: #0c1422;
 }
-#links ul {
-    height: auto;
+li a:hover{
+    color:#009de6;
+    background-color: #e0eefa;
+}
+hr {
+    height: 1px;
+    width:85%;
+    margin: 0px auto 0px auto;
+    background-color: black;    
+    padding-right: 5%;
+    padding-left: 5%;
+    border: none;
+    
 }
 
-/*Petite box aside avec une animation qui doit apparaitre sous la photo*/
+/*photo*/
 img {
     width:90%;
-    padding: 1%;
-    border-radius: 30px;
+    margin: 1%;
+    margin-top: 0px;
+    border: 2px solid #0c1422;
+    border-radius: 15px;
+    transition: box-shadow ease 2s;
 }
+img:hover{
+    box-shadow: 5px 5px 6px rgba(17, 20, 24, 0.7);
+}
+/*Petite box aside avec une animation "pickup" qui doit apparaitre sous la photo*/
 aside {
     width:90%;
     margin: 1%;
     padding:1%;
     font-family: "MerriweatherSans", serif;
+    background-color: #e0eefa;;
     border: 2px #0c1422 double;
-    border-radius: 5px;
+    border-radius: 15px;
     transition: box-shadow ease 2s;
 }
 aside:hover{
-    box-shadow: 5px 5px 6px #7f848b;
+    box-shadow: 5px 5px 6px rgba(17, 20, 24, 0.7);
 }
 
-/*media query pour les écrans en mode portrait ou étroits */
- @media all and (orientation: portrait), (max-width: 900px){
+/*activation des animations de déroulement sur les écrans en mode paysage.*/
+@media all and (orientation: landscape){
+    #motivations:hover ul{
+        height: 10em;
+    }
+    #links:hover ul{
+        height: 10em
+    }
+}
+
+/*media query pour les écrans en mode portrait ou étroits avec animations suspendues */
+ @media all and (orientation: portrait){
     #main{
         flex-direction: column;
         justify-content: center;
@@ -194,7 +232,11 @@ aside:hover{
         flex-direction: row;
         justify-content: center;
     }
-    #motivations:hover ul{
+    ul {    padding-right: 5%;
+        padding-left: 5%;
+        height: 40em;
+    }
+    #motivation:hover ul{
         height: 40em;
     }
     .fenetre {
@@ -204,15 +246,20 @@ aside:hover{
     h1{
         position: fixed;
         width: 100%;
+        color:snow;
+        background-color: #7f848b;
+        border-bottom: 2px solid #0c1422;
     }
     img {
         border-radius: 50%;
     }
     h3 {
         font-size: 4em;
+        color: #0c1422;
     }
     li {
         line-height: 2.5em;
-        font-size: 1.7em;
+        font-size: 1.7em;    padding-right: 5%;
+        padding-left: 5%;
     }
  }

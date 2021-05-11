@@ -16,21 +16,19 @@
 ##------------SYSTEME DE FENETRES DU MENU MOTIVATION------------##
 
     gestion de fenêtres fixes qui s'affichent lorsqu'on les cible,
-    et se ferme lorsqu'on cible leur parent, la div avec une id="fermetureXXX
+    et se ferme lorsqu'on cible leur parent, la div avec une id="fermetureXXX"
 */
 .fenetre {
     position: fixed;
     top: 20%;
     left: 30%;
-    height: 60%;
+    height: auto;
     width: 40%;
     display: none;
-    padding-right: 5%;
-    padding-left: 5%;
+    padding: 2% 5% 3% 5%;
     font-size: 1.5em;
     background-color: #e0eefa;
     overflow: hidden;
-    overflow-y: scroll;
     border-radius: 15px;
     border: 1px solid #7f848b;
     box-shadow: 5px 5px 5px rgba(17, 20, 24, 0.7);
@@ -114,7 +112,9 @@
 }
 
 
-
+/*
+#-----------REGLE CSS POUR LES BALISES STANDARDS-----------#
+*/
 body {
     height:100%;
     min-height: 100vh;
@@ -155,6 +155,10 @@ ul {
     font-size: 1.5em;
     transition: height ease 1s;
 }
+#links a{
+    text-decoration: none;
+    color:#009de6;
+}
 li a{
     text-decoration: none;
     color:#0c1422;
@@ -177,7 +181,7 @@ hr {
     
 }
 
-/*photo*/
+/*photo avec animation "pickup"*/
 img {
     width:90%;
     margin: 1%;
@@ -204,7 +208,7 @@ aside:hover{
     box-shadow: 5px 5px 6px rgba(17, 20, 24, 0.7);
 }
 
-/*activation des animations de déroulement sur les écrans en mode paysage.*/
+/*activation des transistions de déroulement des menus sur les écrans en mode paysage.*/
 @media all and (orientation: landscape){
     #motivations:hover ul{
         height: 10em;
@@ -214,7 +218,7 @@ aside:hover{
     }
 }
 
-/*media query pour les écrans en mode portrait ou étroits avec animations suspendues */
+/*media query pour les écrans en mode portrait ou étroits avec retrait des transitions*/
  @media all and (orientation: portrait){
     #main{
         flex-direction: column;
@@ -232,12 +236,17 @@ aside:hover{
         flex-direction: row;
         justify-content: center;
     }
-    ul {    padding-right: 5%;
-        padding-left: 5%;
+    ul {    
+        padding-right: 1%;
+        padding-left: 1%;
         height: 40em;
     }
     #motivation:hover ul{
         height: 40em;
+    }
+    #links a{
+        text-decoration: none;
+        color:#046a99;
     }
     .fenetre {
         top: 35%;

@@ -188,7 +188,7 @@ img {
     margin-top: 0px;
     border: 2px solid #0c1422;
     border-radius: 15px;
-    transition: box-shadow ease 2s;
+    transition: box-shadow linear 2s;
 }
 img:hover{
     box-shadow: 5px 5px 6px rgba(17, 20, 24, 0.7);
@@ -202,7 +202,7 @@ aside {
     background-color: #e0eefa;;
     border: 2px #0c1422 double;
     border-radius: 15px;
-    transition: box-shadow ease 2s;
+    transition: box-shadow linear 2s;
 }
 aside:hover{
     box-shadow: 5px 5px 6px rgba(17, 20, 24, 0.7);
